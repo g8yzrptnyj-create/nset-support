@@ -6,188 +6,220 @@
     <title>N-Set | Support & Privacy Policy</title>
     <style>
         :root {
-            /* Paleta baseada no tema Neon/Dark do App */
-            --bg-color: #040409;
-            --card-bg: #12121a;
-            --text-main: #f0f0f5;
-            --text-muted: #8a8a9e;
-            --accent-cyan: #00ffff;
-            --accent-amber: #d1942e;
+            --bg-color: #0a0a0f;
+            --text-color: #f2f2f2;
+            --accent-cyan: #00e5ff;
+            --accent-orange: #ff8000;
+            --card-bg: #1a1a24;
         }
 
         body {
             font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
             background-color: var(--bg-color);
-            color: var(--text-main);
+            color: var(--text-color);
             line-height: 1.6;
             margin: 0;
             padding: 0;
-            -webkit-font-smoothing: antialiased;
+            display: flex;
+            justify-content: center;
         }
 
         .container {
             max-width: 800px;
-            margin: 0 auto;
-            padding: 50px 20px;
+            width: 100%;
+            padding: 40px 20px;
         }
 
-        header {
+        .header {
             text-align: center;
-            margin-bottom: 50px;
+            margin-bottom: 40px;
         }
 
-        .logo-placeholder {
-            width: 80px;
-            height: 80px;
-            background: linear-gradient(135deg, rgba(0,255,255,0.1), rgba(209,148,46,0.1));
-            border: 1px solid rgba(0,255,255,0.3);
-            border-radius: 20px;
-            margin: 0 auto 20px auto;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            font-size: 32px;
-            box-shadow: 0 0 20px rgba(0,255,255,0.1);
-        }
-
-        h1 {
-            font-size: 2.8rem;
+        .header h1 {
+            color: var(--text-color);
+            font-size: 2.5em;
+            margin-bottom: 5px;
             font-weight: 900;
-            margin: 0;
-            background: linear-gradient(90deg, var(--accent-cyan), var(--accent-amber));
-            -webkit-background-clip: text;
-            -webkit-text-fill-color: transparent;
-            letter-spacing: -1px;
         }
 
-        .subtitle {
-            color: var(--accent-amber);
+        .header span {
+            color: var(--accent-orange);
+            font-size: 1.2em;
+            letter-spacing: 2px;
             font-weight: bold;
-            letter-spacing: 3px;
-            text-transform: uppercase;
-            font-size: 0.85rem;
-            margin-top: 5px;
         }
 
-        .card {
+        .lang-toggle {
+            display: flex;
+            justify-content: center;
+            gap: 15px;
+            margin-bottom: 40px;
+        }
+
+        .lang-btn {
+            background-color: transparent;
+            color: #888;
+            border: 2px solid #333;
+            padding: 8px 24px;
+            border-radius: 20px;
+            font-size: 16px;
+            font-weight: bold;
+            cursor: pointer;
+            transition: all 0.3s ease;
+        }
+
+        .lang-btn.active {
             background-color: var(--card-bg);
-            border-radius: 24px;
-            padding: 40px;
-            margin-bottom: 30px;
-            box-shadow: 0 20px 40px rgba(0,0,0,0.5);
-            border: 1px solid rgba(255,255,255,0.05);
+            color: var(--accent-cyan);
+            border-color: var(--accent-cyan);
+            box-shadow: 0 0 10px rgba(0, 229, 255, 0.2);
         }
 
         h2 {
-            color: var(--text-main);
-            font-size: 1.5rem;
-            margin-top: 0;
-            border-bottom: 1px solid rgba(255,255,255,0.1);
-            padding-bottom: 15px;
-            margin-bottom: 25px;
+            color: var(--accent-cyan);
+            border-bottom: 1px solid #333;
+            padding-bottom: 10px;
+            margin-top: 40px;
         }
 
         h3 {
-            color: var(--accent-cyan);
-            font-size: 1.1rem;
+            color: var(--accent-orange);
             margin-top: 30px;
-            margin-bottom: 10px;
-        }
-
-        p, ul {
-            color: var(--text-muted);
-            font-size: 1rem;
-        }
-
-        ul {
-            padding-left: 20px;
-        }
-
-        li {
-            margin-bottom: 8px;
         }
 
         a {
-            color: var(--accent-cyan);
+            color: var(--accent-orange);
             text-decoration: none;
-            font-weight: 600;
-            transition: opacity 0.2s;
+            font-weight: bold;
         }
 
         a:hover {
-            opacity: 0.8;
             text-decoration: underline;
         }
 
-        .effective-date {
-            font-size: 0.9rem;
-            color: var(--accent-amber);
-            font-weight: bold;
+        .section {
+            background-color: var(--card-bg);
+            padding: 25px;
+            border-radius: 16px;
             margin-bottom: 20px;
-            display: block;
         }
 
-        footer {
+        .footer {
             text-align: center;
-            color: var(--text-muted);
-            font-size: 0.85rem;
-            margin-top: 50px;
-            border-top: 1px solid rgba(255,255,255,0.05);
-            padding-top: 30px;
+            margin-top: 60px;
+            font-size: 0.9em;
+            color: #666;
         }
 
-        @media (max-width: 600px) {
-            .card { padding: 25px; }
-            h1 { font-size: 2.2rem; }
-        }
+        /* Oculta o conteúdo que não está ativo */
+        .content-pt { display: none; }
     </style>
 </head>
 <body>
 
-<div class="container">
-    <header>
-        <div class="logo-placeholder">⚡️</div>
-        <h1>N-Set</h1>
-        <div class="subtitle">Gym Companion</div>
-    </header>
+    <div class="container">
+        <div class="header">
+            <h1>⚡️ N-Set</h1>
+            <span>Gym Companion</span>
+        </div>
 
-    <div class="card" id="support">
-        <h2>Support & Contact</h2>
-        <p>If you need help using N-Set, want to report a bug, or suggest a new feature, we are here for you!</p>
-        <p>Please contact the developer at: <a href="petruspm@gmail.com">petruspm@gmail.com</a></p>
+        <div class="lang-toggle">
+            <button id="btn-en" class="lang-btn active" onclick="setLang('en')">English</button>
+            <button id="btn-pt" class="lang-btn" onclick="setLang('pt')">Português</button>
+        </div>
+
+        <div id="content-en" class="content-en">
+            
+            <div class="section">
+                <h2>Support & Contact</h2>
+                <p>If you need help using N-Set, want to report a bug, or suggest a new feature, we are here for you!</p>
+                <p>Please contact the developer at: <a href="mailto:petruspm@gmail.com">petruspm@gmail.com</a></p>
+            </div>
+
+            <div class="section">
+                <h2>Privacy Policy</h2>
+                <p><em>Effective Date: March 2026</em></p>
+                <p>Your privacy is our highest priority. The N-Set app was built with a strict privacy-first approach. We believe that your workout data belongs to you and no one else.</p>
+
+                <h3>1. Data Storage</h3>
+                <p>All your workout routines, execution history, and preferences are stored locally on your device and securely synced via your personal Apple iCloud account (using Apple's native framework). We do not own, rent, or maintain any external servers to store your data. We have absolutely no access to your workout logs.</p>
+
+                <h3>2. Apple HealthKit Integration</h3>
+                <p>N-Set requests access to Apple HealthKit strictly to enhance your experience. Specifically, we request permission to:</p>
+                <ul>
+                    <li><strong>Read:</strong> Your heart rate during active sessions to display it on your Apple Watch in real-time.</li>
+                    <li><strong>Write:</strong> Your workout sessions (duration and estimated active calories) into your Apple Health app to close your rings.</li>
+                </ul>
+                <p>This data is processed locally on your Apple Watch and iPhone. We do not transmit, sell, or share your health data with any third parties under any circumstances.</p>
+
+                <h3>3. Analytics & Tracking</h3>
+                <p>N-Set does not include any third-party advertising SDKs, tracking pixels, or analytics tools. We do not track your behavior, clicks, or location.</p>
+
+                <h3>4. Changes to This Policy</h3>
+                <p>If we make any significant changes to this policy, we will notify you by updating the "Effective Date" at the top of this page.</p>
+                <p>If you have any questions regarding your data or this Privacy Policy, please contact us using the email provided in the Support section above.</p>
+            </div>
+        </div>
+
+        <div id="content-pt" class="content-pt">
+            
+            <div class="section">
+                <h2>Suporte e Contato</h2>
+                <p>Se você precisa de ajuda para usar o N-Set, deseja relatar um bug ou sugerir uma nova funcionalidade, estamos aqui para ajudar!</p>
+                <p>Entre em contato com o desenvolvedor em: <a href="mailto:petruspm@gmail.com">petruspm@gmail.com</a></p>
+            </div>
+
+            <div class="section">
+                <h2>Política de Privacidade</h2>
+                <p><em>Data de vigência: Março de 2026</em></p>
+                <p>Sua privacidade é nossa maior prioridade. O aplicativo N-Set foi construído com uma abordagem rigorosa de prioridade à privacidade (privacy-first). Acreditamos que os dados do seu treino pertencem a você e a mais ninguém.</p>
+
+                <h3>1. Armazenamento de Dados</h3>
+                <p>Todas as suas rotinas de treino, histórico de execução e preferências são armazenadas localmente no seu dispositivo e sincronizadas de forma segura através da sua conta pessoal do Apple iCloud (usando a estrutura nativa da Apple). Nós não possuímos, alugamos ou mantemos servidores externos para armazenar seus dados. Não temos absolutamente nenhum acesso aos seus registros de treino.</p>
+
+                <h3>2. Integração com o Apple HealthKit</h3>
+                <p>O N-Set solicita acesso ao Apple HealthKit estritamente para melhorar sua experiência. Especificamente, solicitamos permissão para:</p>
+                <ul>
+                    <li><strong>Ler:</strong> Seus batimentos cardíacos durante as sessões ativas para exibi-los no seu Apple Watch em tempo real.</li>
+                    <li><strong>Escrever:</strong> Suas sessões de treino (duração e estimativa de calorias ativas) no aplicativo Saúde (Apple Health) para fechar seus anéis de atividade.</li>
+                </ul>
+                <p>Esses dados são processados localmente no seu Apple Watch e iPhone. Sob nenhuma circunstância transmitimos, vendemos ou compartilhamos seus dados de saúde com terceiros.</p>
+
+                <h3>3. Analytics e Rastreamento</h3>
+                <p>O N-Set não inclui nenhum SDK de publicidade de terceiros, pixels de rastreamento ou ferramentas de análise de dados. Nós não rastreamos seu comportamento, cliques ou localização.</p>
+
+                <h3>4. Alterações nesta Política</h3>
+                <p>Se fizermos alterações significativas a esta política, notificaremos você atualizando a "Data de vigência" no topo desta página.</p>
+                <p>Se você tiver alguma dúvida sobre seus dados ou sobre esta Política de Privacidade, entre em contato conosco usando o e-mail fornecido na seção de Suporte acima.</p>
+            </div>
+        </div>
+
+        <div class="footer">
+            <p>© 2026 Petrus Marques. All rights reserved.</p>
+            <p>Designed for Apple Watch & iPhone.</p>
+        </div>
     </div>
 
-    <div class="card" id="privacy">
-        <h2>Privacy Policy</h2>
-        <span class="effective-date">Effective Date: March 2026</span>
-        
-        <p>Your privacy is our highest priority. The N-Set app was built with a strict privacy-first approach. We believe that your workout data belongs to you and no one else.</p>
+    <script>
+        function setLang(lang) {
+            // Pegando elementos
+            const contentEn = document.getElementById('content-en');
+            const contentPt = document.getElementById('content-pt');
+            const btnEn = document.getElementById('btn-en');
+            const btnPt = document.getElementById('btn-pt');
 
-        <h3>1. Data Storage</h3>
-        <p>All your workout routines, execution history, and preferences are stored locally on your device and securely synced via your personal Apple iCloud account (using Apple's native framework). We do not own, rent, or maintain any external servers to store your data. We have absolutely no access to your workout logs.</p>
-
-        <h3>2. Apple HealthKit Integration</h3>
-        <p>N-Set requests access to Apple HealthKit strictly to enhance your experience. Specifically, we request permission to:</p>
-        <ul>
-            <li><strong>Read:</strong> Your heart rate during active sessions to display it on your Apple Watch in real-time.</li>
-            <li><strong>Write:</strong> Your workout sessions (duration and estimated active calories) into your Apple Health app to close your rings.</li>
-        </ul>
-        <p>This data is processed locally on your Apple Watch and iPhone. We do not transmit, sell, or share your health data with any third parties under any circumstances.</p>
-
-        <h3>3. Analytics & Tracking</h3>
-        <p>N-Set does not include any third-party advertising SDKs, tracking pixels, or analytics tools. We do not track your behavior, clicks, or location.</p>
-
-        <h3>4. Changes to This Policy</h3>
-        <p>If we make any significant changes to this policy, we will notify you by updating the "Effective Date" at the top of this page.</p>
-
-        <p style="margin-top: 30px;">If you have any questions regarding your data or this Privacy Policy, please contact us using the email provided in the Support section above.</p>
-    </div>
-
-    <footer>
-        &copy; 2026 Petrus Pires Marques. All rights reserved.<br>
-        Designed for Apple Watch & iPhone.
-    </footer>
-</div>
-
+            if(lang === 'en') {
+                contentEn.style.display = 'block';
+                contentPt.style.display = 'none';
+                btnEn.classList.add('active');
+                btnPt.classList.remove('active');
+            } else {
+                contentEn.style.display = 'none';
+                contentPt.style.display = 'block';
+                btnPt.classList.add('active');
+                btnEn.classList.remove('active');
+            }
+        }
+    </script>
 </body>
 </html>
